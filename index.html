@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="facebook-domain-verification" content="e8a2zks8gw9ol86sb4lhucu2ep8rhv" />
+  <title>Congratulations! बधाई हो!</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    .claim-button {
+      font-size: 20px;
+      padding: 15px 30px;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .claim-button:hover {
+      background-color: #218838;
+    }
+
+    .win-icon {
+      font-size: 100px;
+      color: #28a745;
+    }
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container text-center">
+    <i class="fas fa-trophy win-icon"></i>
+    <h1>बधाई हो! Congratulations!</h1>
+    <p>आपने 995 रुपये जीत लिए हैं। पैसे पाने के लिए यहां क्लिक करें।</p>
+    <button id="claimBtn" class="claim-button">
+        <i class="fas fa-gift"></i> अब प्राप्त करें
+      </button>      
+    <p class="mt-1">आपको <span id="countdown">5</span> सेकंड में पुनर्निर्देशित किया जाएगा।</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <!-- Custom Script -->
+  <script>
+    var linktoredirect = "https://bonus.moneygift.shop";
+    // Countdown timer and redirect
+    let timeLeft = 5;
+    const countdown = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = linktoredirect;
+      } else {
+        countdown.textContent = timeLeft;
+        timeLeft--;
+      }
+    }, 1000);
+
+    // Redirect on claim button click
+    document.getElementById('claimBtn').addEventListener('click', function () {
+      window.location.href = linktoredirect;
+    });
+  </script>
+</body>
+
+</html>
